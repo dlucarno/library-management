@@ -1,6 +1,7 @@
 <?php
+include_once('../database/database.php') ;
+ 
 // Ceci est le CRUD de Book
-
 function createBook($title, $author, $description, $quantity, $borrowed_number, $photo, $pdf, $id_categories) {
     global $conn;
     $sql = "INSERT INTO Books (title, author, description, quantity, borrowed_number, photo, pdf, id_categories) VALUES ('$title', '$author', '$description', $quantity, $borrowed_number, '$photo', '$pdf', $id_categories)";
@@ -66,14 +67,20 @@ function deleteUser($id) {
 function createCategory($title) {
     global $conn;
     $sql = "INSERT INTO Categories (title) VALUES ('$title')";
-    mysqli_query($conn, $sql);
-}
+    $res = mysqli_query($conn, $sql);
+    if($res){
+        echo "La catégorie a bien été ajoutée";
+      }else{
+        echo "La catégorie n'a pas été ajoutée";
+      }
+   
+  }
 
-function readCategory($id) {
+function listAllCategories() {
     global $conn;
-    $sql = "SELECT * FROM Categories WHERE id=$id";
+    $sql = "SELECT * FROM Categories";
     $result = mysqli_query($conn, $sql);
-    return mysqli_fetch_assoc($result);
+   return $result;
 }
 
 function updateCategory($id, $title) {

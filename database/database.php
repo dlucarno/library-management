@@ -1,9 +1,7 @@
 <?php
-include('config.php');
-# connexion a la base donnée
-try {	
-$conn = mysqli_connect($db['host'], $db['user'], $db['password'], $db['name']);
-}catch (Exception $e) {
-echo "ERREUR DE CONNEXION A LA BASE DE DONNEE !";
-die();
+include_once('config.php');
+$conn = mysqli_connect($db['host'], $db['user'], $db['password'], $db['dbname']);
+if(!$conn){
+  echo "Erreur de connexion à la base de données";
+  die();
 }

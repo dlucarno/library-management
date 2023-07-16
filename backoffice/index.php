@@ -1,19 +1,22 @@
 <?php
-  include_once '../../includes/partials/back/header.php';
-?>
+  include_once '../includes/partials/header_back.php';
+  include_once '../includes/bootstrap.php';
+  ?>
 
 
-<h2>Nos Categories</h2>
+  
+  <h2>Nos livres</h2>
   <div class="mon-tableau">
     <table cellpadding="0" cellspacing="0" >
       <tr class="special-tr">
-        <td>N°</td>
-        <td>Titre</td>
-        <td>Action</td>
+        <td>Livres</td>
+        <td>Titres</td>
+        <td>Catégories</td>
+        <td>Actions</td>
       </tr>
       <tr>
         
-        
+        <td><img src="../assets/img/book1.webp"  width="70px"></td>
         <td>Le Prince Perdu</td>
         <td>Fantastique</td>
         <td>
@@ -22,7 +25,7 @@
         </td>
       </tr>
       <tr>
-     
+      <td><img src="../assets/img/book1.webp"  width="70px"></td>
         <td>Le Prince Perdu</td>
         <td>Fantastique</td>
         <td>
@@ -31,7 +34,7 @@
         </td>
       </tr>
       <tr>
-      
+      <td><img src="../assets/img/book1.webp"  width="70px"></td>
         <td>Le Prince Perdu</td>
         <td>Fantastique</td>
         <td>
@@ -41,7 +44,6 @@
       </tr>
     </table>
   </div>
-
-<?php
-  include_once '../../includes/partials/back/footer.php';
+ <?php
+  include_once '../includes/partials/footer_back.php';
 ?>

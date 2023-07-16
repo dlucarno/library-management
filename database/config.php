@@ -1,9 +1,8 @@
 ﻿<?php
 //parametrage des accès
 $db = [
-'host' => 'mbp-de-lucarno',
-'name' => 'test',
+'host' => 'localhost',
+'dbname' => 'library',
 'user' => 'root',
 'password' =>''
 ];
-// yes
