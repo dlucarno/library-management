@@ -83,17 +83,21 @@ function listAllCategories() {
    return $result;
 }
 
+function readCategory($id) {
+    global $conn;
+    $sql = "SELECT * FROM Categories WHERE id=$id";
+    $result = mysqli_query($conn, $sql);
+    // return mysqli_fetch_assoc($result);
+    return $result;
+}
+
+
 function updateCategory($id, $title) {
     global $conn;
     $sql = "UPDATE Categories SET title='$title' WHERE id=$id";
     mysqli_query($conn, $sql);
 }
 
-function deleteCategory($id) {
-    global $conn;
-    $sql = "DELETE FROM Categories WHERE id=$id";
-    mysqli_query($conn, $sql);
-}
 
 // Fin CRUD de Category
 

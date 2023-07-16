@@ -34,7 +34,7 @@
           <script>
             function deleteCategory(id) {
               if(confirm("Êtes-vous sûr de vouloir supprimer cette catégorie?")) {
-                window.location.href = '../includes/functions/function.php?action=delete&id=' + id;
+                window.location.href = './traitement.php?cat_del=' + id;
               }
             }
           </script>
@@ -42,7 +42,7 @@
           
           
 
-          <button type="button">Modifier</button>
+          <button type="button" onclick="window.location.href='./add_category.php?update_cat=<?php echo $row['id']; ?>'">Modifier</button>
         </td>
       </tr>
      
