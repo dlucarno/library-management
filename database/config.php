@@ -6,3 +6,4 @@ $db = [
 'user' => 'root',
 'password' =>''
 ];
+// yes
