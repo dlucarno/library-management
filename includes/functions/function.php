@@ -5,7 +5,8 @@ include_once('../database/database.php') ;
 function createBook($title, $author, $description, $quantity, $borrowed_number, $photo, $pdf, $id_categories) {
     global $conn;
     $sql = "INSERT INTO Books (title, author, description, quantity, borrowed_number, photo, pdf, id_categories) VALUES ('$title', '$author', '$description', $quantity, $borrowed_number, '$photo', '$pdf', $id_categories)";
-    mysqli_query($conn, $sql);
+    $res = mysqli_query($conn, $sql);
+    return $res;    
 }
 
 function readBook($id) {
@@ -151,5 +152,13 @@ function deleteBorrowing($id) {
 }
 
 
-// Fin CRUD de Borrowing
+// Fin CRUD de 
+
+
+
+
+function estConnecte() {
+    return isset($_SESSION['id']);
+}
+
 ?>

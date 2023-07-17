@@ -1,4 +1,4 @@
-<nav>
+<nav style="height: 100vh;">
       <div class="logo">
         <div><img src="../assets/img/book2.WEBP" alt="logo"></div>
       </div>

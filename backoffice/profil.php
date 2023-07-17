@@ -1,36 +1,66 @@
 <?php
   include_once '../includes/partials/header_back.php';
-  include_once '../includes/bootstrap.php';
-  ?>
-
-<?php
-  // Récupérer les informations de l'utilisateur
-  $user = $_SESSION['user'];
-
-  // Récupérer la liste des livres empruntés
-  $books = getBorrowedBooks($user['id']);
+  include_once '../includes/functions/function.php';
 ?>
 
 <div class="profile">
   <h2>Profil de l'utilisateur</h2>
   <form method="post" action="update_profile.php">
-    <p>Nom: <input type="text" name="nom" value="<?php echo $user['nom']; ?>"></p>
-    <p>Prénom: <input type="text" name="prenom" value="<?php echo $user['prenom']; ?>"></p>
-    <p>Email: <input type="text" name="email" value="<?php echo $user['email']; ?>"></p>
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" name="nom" value="<?php echo $user['nom']; ?>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="prenom">Prénom:</label>
+      <input type="text" id="prenom" name="prenom" value="<?php echo $user['prenom']; ?>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" value="<?php echo $user['email']; ?>" class="form-control">
+    </div>
 
-    <input type="submit" value="Modifier les informations">
+    <button type="submit" class="btn btn-primary">Modifier les informations</button>
   </form>
 
-  <h3>Livres empruntés:</h3>
-  <ul>
-    <?php foreach($books as $book): ?>
-      <li>
-        <?php echo $book['title']; ?>
-        <a href="<?php echo $book['pdf_link']; ?>" target="_blank">Lire le livre</a>
-      </li>
-    <?php endforeach; ?>
-  </ul>
-</div>
+  <h3 style="text-align: center;">Livres empruntés:</h3>
+
+  <div class="mon-tableau">
+    <table cellpadding="0" cellspacing="0" >
+      <tr class="special-tr">
+        <td>Livres</td>
+        <td>Titres</td>
+        <td>Catégories</td>
+        <td>Actions</td>
+      </tr>
+      <tr>
+        
+        <td><img src="../assets/img/book1.webp"  width="70px"></td>
+        <td>Le Prince Perdu</td>
+        <td>Fantastique</td>
+        <td>
+          <button type="button">Retourner</button>
+        </td>
+      </tr>
+      <tr>
+      <td><img src="../assets/img/book1.webp"  width="70px"></td>
+        <td>Le Prince Perdu</td>
+        <td>Fantastique</td>
+        <td>
+          <button type="button">Retourner</button>
+          
+        </td>
+      </tr>
+      <tr>
+      <td><img src="../assets/img/book1.webp"  width="70px"></td>
+        <td>Le Prince Perdu</td>
+        <td>Fantastique</td>
+        <td>
+          <button type="button">Retourner</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
 </div>
 
 <style>
@@ -44,12 +74,15 @@
   .profile h2, .profile h3 {
     color: #333;
   }
-  .profile p, .profile li {
+  .profile .form-group, .profile .list-group-item {
     color: #666;
   }
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
 </style>
-  
 
 <?php
   include_once '../includes/partials/footer_back.php';
-  ?>
+?>
