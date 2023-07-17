@@ -1,5 +1,8 @@
 <?php
 include_once('../database/database.php') ;
+
+insertCategoriesAutomatically();
+
  
 // Ceci est le CRUD de Book
 function createBook($title, $author, $description, $quantity, $borrowed_number, $photo, $pdf, $id_categories) {
@@ -155,10 +158,67 @@ function deleteBorrowing($id) {
 // Fin CRUD de 
 
 
+// Fonction de pagination
+function pagination($page) {
+    global $conn;
+    $limit = 4; // Nombre de livres par page
+    $start = ($page - 1) * $limit; // Début de la requête SQL
+    $sql = "SELECT * FROM Books LIMIT $start, $limit";
+    $result = mysqli_query($conn, $sql);
+    return $result;
+}
+
+
+function login($email, $password) {
+    global $conn;
+    $sql = "SELECT * FROM Users WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
+        session_start();
+        $_SESSION['id'] = $user['id'];
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function logout() {
+    session_start();
+    session_destroy();
+    header('Location: index.php');
+}
 
 
 function estConnecte() {
     return isset($_SESSION['id']);
 }
+
+// Fonction pour insérer automatiquement des catégories dans la base de données
+function insertCategoriesAutomatically() {
+    global $conn;
+    // Vérifie si les catégories ont déjà été insérées
+    $sql = "SELECT COUNT(*) as count FROM Categories";
+    $result = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_assoc($result);
+    if ($data['count'] == 0) {
+        // Liste des catégories à insérer
+        $categories = ['Littérature', 'Informatique', 'Droit', 'Mathématique', 'Musique', 'Science', 'Economie', 'Finance', 'Technologie'];
+
+        foreach ($categories as $category) {
+            $sql = "INSERT INTO Categories (title) VALUES ('$category')";
+            mysqli_query($conn, $sql);
+        }
+    }
+}
+
+// Fonction pour insérer automatiquement des livres dans la base de données
+
+
+
+// Appel de la fonction après la connexion à la base de données
+
+
 
 ?>

@@ -1,7 +1,7 @@
 
-<div class="grafico">
-    <img src="img/grafico.jpg" alt="">
-  </div>
+<div class="grafico" >
+    
+</div>
 </main>
 </div>
   </body>

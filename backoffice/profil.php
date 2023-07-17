@@ -38,6 +38,7 @@
         <td>Le Prince Perdu</td>
         <td>Fantastique</td>
         <td>
+          <button type="button">Lire</button>
           <button type="button">Retourner</button>
         </td>
       </tr>
@@ -46,6 +47,7 @@
         <td>Le Prince Perdu</td>
         <td>Fantastique</td>
         <td>
+          <button type="button">Lire</button>
           <button type="button">Retourner</button>
           
         </td>
@@ -55,6 +57,7 @@
         <td>Le Prince Perdu</td>
         <td>Fantastique</td>
         <td>
+          <button type="button">Lire</button>
           <button type="button">Retourner</button>
         </td>
       </tr>
