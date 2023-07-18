@@ -1,0 +1,258 @@
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Muli', sans-serif;
+  }
+  
+  .special-div{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+  
+  
+  
+  nav {
+    display: flex;
+    width: 30%;
+    overflow: hidden;
+    flex-direction: column;
+    max-height: 100vh;
+    border-right: solid 1px #d1d1d1;
+    box-shadow: 2px 1px 15px rgba(0,0,0,0.1);
+    z-index: 10;
+  }
+  
+  .test-a{
+  text-decoration: none;
+    color:#606060;
+    font-weight: 600;
+  }
+  
+  .special-div nav ul li  {
+    padding: 20px;
+    margin-bottom: 6px;
+    color:#606060;
+    font-weight: 600;
+    border-left: solid 4px rgba(0,0,0,0.1);
+    margin-left: 4px;
+    cursor: pointer;
+    transition: all 0.3s; 
+}
+  .special-div nav ul li:hover{
+    border-left: solid 4px #fcc728;
+    color: #fcc728;
+  }
+
+  
+  .special-div nav ul li:hover + .subboton{
+    transition: height 0.3s;
+    height: 130px;
+  }
+  
+
+  .subboton{
+    padding: 0px;
+    margin-left: 35px;
+    list-style: none;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.3s;
+    max-height: 100%;
+  }
+  .subboton:hover{
+    height: 130px;
+  }
+  
+  
+  .panel{
+    width: 100%;
+    overflow:auto;
+    max-height: 90%;
+    background-color:#fefefe;
+  }
+  
+  header {
+    height: 70px;
+    width: 100%;
+    border-bottom: solid 1px #d1d1d1;
+    background-color: #fff;
+    position: sticky;
+    top: 0px;
+    box-shadow: 1px 2px 15px rgba(0,0,0,0.1);
+    z-index: 11;
+  }
+  header img{
+    max-height: 30px;
+    float: right;
+    width: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-right: 10px;
+  }
+  header img:hover{
+    cursor: pointer;
+  }
+  .logo{
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  
+  .titleD{
+    color:#606060;
+    font-weight: 400;
+    font-size: 1.3em;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    text-decoration: underline;
+    color:#fcc728;
+  }
+  
+  .mon-tableau{
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #fcc728;
+    padding: 10px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 6px 0px #e2b324);
+  }
+  .mon-tableau table{
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+  
+  
+  }
+  .mon-tableau table tr td{
+    font-size: 1em;
+    font-weight: 300;
+    border: solid 1px #ededed;
+    padding:3px 0px 3px 0px;
+    font-family: 'Muli', sans-serif;
+    background-color: #fff;
+  }
+  
+  .panel h2{
+    font-weight: 200;
+    font-size: 1.2em;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-right: 50px;
+    color: #333333;
+    margin-bottom: 5px;
+  }
+  .panel h2 i{
+    color: #333333;
+    padding-left: 10px;
+    font-size: 0.8em;
+    color: #333333;
+  }
+  .special-tr{
+    color:#fcc728;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+ 
+  
+ 
+
+  .grafico{
+  margin: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fcc728;
+  filter: drop-shadow(0px 6px 0px #e2b324);
+  }
+  .grafico img{
+    width: 100%;
+  }
+  
+  @media (max-width: 425px) {
+    .mon-tableau table tr th{
+      font-size: 0.7em;
+      padding: 0px;
+    }
+    .mon-tableau{
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 1px;
+      border-radius: 10px;
+    }
+    .mon-tableau table{
+      padding: 2px;
+      margin: 5px;
+    }
+    .titleD{
+      font-size: 0.9em;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .special-div nav ul li{
+      font-size: 0.7em;
+      font-weight: 300;
+      margin-left: 2px;
+      padding: 10px;
+    }
+   
+    header img{
+      width: 10%;
+    }
+  
+    .grafico{
+    margin: 5px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: solid 1px #d1d1d1;
+    }
+    .panel h2{
+      font-size: 1em;
+      padding-left: 5px;
+      padding-top: 10px;
+      padding-right: 5px;
+    }
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 4px solid #f2b708; padding: 50px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .cover-file {
+    width: 200px; 
+    height: 300px; 
+    border: 8px solid #fcc728; 
+    background-size: cover; 
+    transform: perspective(1000px) rotateY(10deg); 
+    border-width: high;
+  }
+  
