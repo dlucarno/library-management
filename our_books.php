@@ -105,6 +105,7 @@
                     <button type="button" class="more-btn" >&raquo;</button>
                     <button type="button" class="more-btn">Fin</button>
             </div>
+            
 
         </section>
 
